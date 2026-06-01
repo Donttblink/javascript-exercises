@@ -1,6 +1,10 @@
 const sumAll = function(min, max) {
+  if (min < 0 || max < 0) return 'ERROR';
+  if (Math.floor(min) !== min || Math.floor(max) !== max) return 'ERROR';
   let total = 0
-  for (let i = min ; i <= max; i++){
+  const start = Math.min(min, max);
+  const end = Math.max(min, max);
+  for (let i = start ; i <= end; i++){
     total += i;  
   }
   return total;
